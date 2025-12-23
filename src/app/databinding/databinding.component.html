@@ -1,0 +1,17 @@
+<p>Databinding Works!</p>
+<h2>Interpolation</h2>
+<span>Product Name:{{productName}}</span>
+
+<span>Property Binding</span>
+
+
+<Span>Product Name:</Span>
+<input type="text" [value]="productName"/>
+
+<Span>Event Binding</Span>
+<input type="button" (click)="showAlert()" value="Click"/>
+
+<Span>Product Code:</Span>
+<input type="text" [(ngModel)]="productCode"/>
+<!--<input type="text" [(ngModel)]="productCode"/>-->
+<Span>Product Code:{{productCode}}</Span>

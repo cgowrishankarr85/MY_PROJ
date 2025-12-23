@@ -1,7 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DatabindingComponent } from './databinding/databinding.component';
+import { DirectiveSampleComponent } from './directive-sample/directive-sample.component';
+import { PipeSampleComponent } from './pipe-sample/pipe-sample.component';
+import { PersonalComponent } from './pipe-sample/personal/personal.component';
+import { EducationComponent } from './pipe-sample/education/education.component';
+import { CustomerAddComponent } from './Customer/customer-add/customer-add.component';
+import { ProductTemplateDrivenComponent } from './product/product-template-driven/product-template-driven.component';
+import { ProductModelDrivenComponent } from './product/product-model-driven/product-model-driven.component';
+import { ObservableSampleComponent } from './observable-sample/observable-sample.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'databinding', component: DatabindingComponent },
+  { path: 'dir/:name', component: DirectiveSampleComponent },
+  {
+    path: 'pipe', component: PipeSampleComponent, children: [{ path: 'personal', component: PersonalComponent },
+    { path: 'education', component: EducationComponent }]
+  },
+  { path: 'datasharing', component: CustomerAddComponent },
+  { path: 'templatedriven', component: ProductTemplateDrivenComponent },
+  { path: 'modeldriven', component: ProductModelDrivenComponent },
+  {path:'observable', component:ObservableSampleComponent},
+  { path: "**", redirectTo: "databinding" }
+  
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

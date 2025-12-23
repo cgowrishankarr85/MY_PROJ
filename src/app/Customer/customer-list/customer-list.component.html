@@ -1,0 +1,20 @@
+<p>customer-list works! (child component)</p>
+<table class="table">
+<thead>
+    <tr>
+        <th>
+            Customer Name
+        </th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let cust of customerList">
+        <td>
+{{cust}}
+        </td>
+        <td>
+            <input type="button" value="select" class="btn btn-warning" (click)="selectCustomer(cust)"/>
+        </td>
+    </tr>
+</tbody>
+</table>
